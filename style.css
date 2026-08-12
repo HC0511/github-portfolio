@@ -264,6 +264,7 @@ img {
             rotateX(360deg)
             rotateY(360deg);
     }
+
 }
 
 
@@ -616,13 +617,20 @@ img {
 
 
 /* =====================================================
-   SWF PLAYER
+   SWF PLAYER - WIDE LANDSCAPE RECTANGLE
 ===================================================== */
 
 .animate-preview {
+
     width: 100%;
 
-    height: 600px;
+    /*
+       Makes the SWF a wide rectangle.
+       16:9 is the standard landscape ratio.
+    */
+    aspect-ratio: 16 / 9;
+
+    height: auto;
 
     background: #000;
 
@@ -634,23 +642,32 @@ img {
 }
 
 .swf-container {
+
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 }
 
 #space-with-me {
+
     width: 100%;
+
     height: 100%;
 }
 
 #space-with-me ruffle-player {
+
     width: 100% !important;
+
     height: 100% !important;
+
+    display: block;
 }
 
 .loading-text {
+
     color: #666;
 
     font-size: 14px;
@@ -664,6 +681,7 @@ img {
 ===================================================== */
 
 .animate-content h3 {
+
     font-size:
         clamp(35px, 4vw, 55px);
 
@@ -673,6 +691,7 @@ img {
 }
 
 .animate-content > p {
+
     color: #999;
 
     margin-bottom: 20px;
@@ -684,6 +703,7 @@ img {
 ===================================================== */
 
 .animate-details {
+
     display: grid;
 
     grid-template-columns:
@@ -695,6 +715,7 @@ img {
 }
 
 .animate-details div {
+
     padding: 15px;
 
     border-left:
@@ -708,12 +729,14 @@ img {
 }
 
 .animate-details strong {
+
     font-size: 18px;
 
     color: #fff;
 }
 
 .animate-details span {
+
     color: #777;
 
     font-size: 11px;
@@ -731,6 +754,7 @@ img {
 }
 
 .software-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -740,6 +764,7 @@ img {
 }
 
 .software-card {
+
     padding:
         35px 25px;
 
@@ -754,6 +779,7 @@ img {
 }
 
 .software-card:hover {
+
     transform:
         translateY(-5px);
 
@@ -761,12 +787,15 @@ img {
 }
 
 .software-icon {
+
     width: 65px;
+
     height: 65px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     margin:
@@ -781,10 +810,12 @@ img {
 }
 
 .software-card h3 {
+
     margin-bottom: 7px;
 }
 
 .software-card p {
+
     color: #777;
 
     font-size: 12px;
@@ -796,11 +827,13 @@ img {
 ===================================================== */
 
 .contact {
+
     min-height: 70vh;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -817,10 +850,12 @@ img {
 }
 
 .contact-content {
+
     max-width: 750px;
 }
 
 .contact-content > p:first-child {
+
     color: #777;
 
     font-size: 11px;
@@ -831,6 +866,7 @@ img {
 }
 
 .contact h2 {
+
     font-size:
         clamp(50px, 7vw, 90px);
 
@@ -840,10 +876,12 @@ img {
 }
 
 .contact h2 span {
+
     color: #777;
 }
 
 .contact-description {
+
     color: #888;
 
     margin-bottom: 35px;
@@ -855,6 +893,7 @@ img {
 ===================================================== */
 
 footer {
+
     padding:
         40px 7%;
 
@@ -873,6 +912,7 @@ footer {
 }
 
 .footer-logo {
+
     color: #fff;
 
     font-weight: bold;
@@ -881,16 +921,19 @@ footer {
 }
 
 .footer-logo span {
+
     color: #666;
 }
 
 .social-links {
+
     display: flex;
 
     gap: 20px;
 }
 
 .social-links a:hover {
+
     color: #fff;
 }
 
@@ -902,30 +945,37 @@ footer {
 @media (max-width: 1100px) {
 
     .navbar {
+
         padding:
             0 5%;
     }
 
     .navbar nav {
+
         gap: 15px;
     }
 
     .hero {
+
         padding-left: 7%;
+
         padding-right: 7%;
     }
 
     .hero-visual {
+
         transform:
             scale(0.8);
     }
 
     .project-grid {
+
         grid-template-columns:
             repeat(2, 1fr);
     }
 
     .software-grid {
+
         grid-template-columns:
             repeat(2, 1fr);
     }
@@ -940,6 +990,7 @@ footer {
 @media (max-width: 750px) {
 
     .navbar {
+
         min-height: auto;
 
         padding:
@@ -951,6 +1002,7 @@ footer {
     }
 
     .navbar nav {
+
         flex-wrap: wrap;
 
         justify-content: center;
@@ -959,6 +1011,7 @@ footer {
     }
 
     .hero {
+
         padding-top: 180px;
 
         flex-direction: column;
@@ -969,25 +1022,31 @@ footer {
     }
 
     .hero-description {
+
         margin-left: auto;
+
         margin-right: auto;
     }
 
     .hero-buttons {
+
         justify-content: center;
     }
 
     .hero-visual {
+
         transform:
             scale(0.7);
     }
 
     .about-content {
+
         grid-template-columns:
             1fr;
     }
 
     .project-grid {
+
         grid-template-columns:
             1fr;
     }
@@ -1004,19 +1063,35 @@ footer {
 
     .vr-project.reverse .vr-image,
     .vr-project.reverse .vr-content {
+
         order: initial;
     }
 
+
+    /*
+       Keep the Adobe Animate display
+       as a wide landscape rectangle
+       even on mobile.
+    */
+
     .animate-preview {
-        height: 500px;
+
+        width: 100%;
+
+        aspect-ratio: 16 / 9;
+
+        height: auto;
     }
 
+
     .software-grid {
+
         grid-template-columns:
             1fr 1fr;
     }
 
     footer {
+
         flex-direction: column;
 
         gap: 20px;
@@ -1034,25 +1109,31 @@ footer {
 @media (max-width: 500px) {
 
     .section {
+
         padding:
             80px 6%;
     }
 
     .hero {
+
         padding-left: 6%;
+
         padding-right: 6%;
     }
 
     .hero h1 {
+
         letter-spacing:
             -2px;
     }
 
     .hero-buttons {
+
         flex-direction: column;
     }
 
     .software-grid {
+
         grid-template-columns:
             1fr;
     }
@@ -1064,8 +1145,18 @@ footer {
             1fr;
     }
 
+
+    /*
+       Still 16:9 instead of a tall rectangle.
+    */
+
     .animate-preview {
-        height: 400px;
+
+        width: 100%;
+
+        aspect-ratio: 16 / 9;
+
+        height: auto;
     }
 
 }
